@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8/"
+     xml:base="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-8="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#aRealise -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#aRealise">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Realisateur"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#awards -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#awards">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Realisateur"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#duree -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#duree">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#genre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#genre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#language -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#language">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Realisateur"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#numberOfMoviesDirected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#numberOfMoviesDirected">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Realisateur"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#rating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#rating">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#releaseYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#releaseYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#title">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film"/>
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Realisateur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Realisateur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film"/>
+        <untitled-ontology-8:duree rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">148</untitled-ontology-8:duree>
+        <untitled-ontology-8:genre>Thriller</untitled-ontology-8:genre>
+        <untitled-ontology-8:language>English</untitled-ontology-8:language>
+        <untitled-ontology-8:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.8</untitled-ontology-8:rating>
+        <untitled-ontology-8:releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2010</untitled-ontology-8:releaseYear>
+        <untitled-ontology-8:title>Inception</untitled-ontology-8:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Realisateur1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Realisateur1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Realisateur"/>
+        <untitled-ontology-8:aRealise rdf:resource="http://www.semanticweb.org/saraboulaid_selmaaitoukhadou/ontologies/2025/0/untitled-ontology-8#Film1"/>
+        <untitled-ontology-8:awards>Academy Award Nominee, Golden Globe Winner</untitled-ontology-8:awards>
+        <untitled-ontology-8:name>Christopher Nolan</untitled-ontology-8:name>
+        <untitled-ontology-8:numberOfMoviesDirected rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</untitled-ontology-8:numberOfMoviesDirected>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

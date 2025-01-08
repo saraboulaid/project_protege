@@ -1,0 +1,11 @@
+<h1>Recommandations pour {{ username }}</h1>
+{% if films %}
+<ul>
+  {% for film in films %}
+  <li>{{ film }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>Aucune recommandation trouvée pour le genre sélectionné.</p>
+{% endif %}
+<a href="{% url 'profile' %}">Revenir</a>

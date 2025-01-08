@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <!-- Lien vers CSS Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1 class="text-center mb-4">Mettre à jour votre profil</h1>
+
+      <!-- Affichage des erreurs -->
+      {% if error %}
+      <div class="alert alert-danger" role="alert">{{ error }}</div>
+      {% endif %}
+
+      <!-- Formulaire de mise à jour -->
+      <form method="POST" class="needs-validation" novalidate>
+        {% csrf_token %}
+
+        <!-- Nom d'utilisateur -->
+        <div class="mb-3">
+          <label for="username" class="form-label">Nom d'utilisateur :</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">
+            Veuillez entrer un nom d'utilisateur.
+          </div>
+        </div>
+
+        <!-- Genre favori -->
+        <div class="mb-3">
+          <label for="favorite_genre" class="form-label">Genre favori :</label>
+          <select
+            id="favorite_genre"
+            name="favorite_genre"
+            class="form-select"
+            required
+          >
+            <option value="">-- Sélectionnez un genre --</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Action">Action</option>
+            <option value="Drama">Drama</option>
+            <option value="Horror">Horror</option>
+            <!-- Ajouter d'autres genres si nécessaire -->
+          </select>
+          <div class="invalid-feedback">
+            Veuillez sélectionner un genre favori.
+          </div>
+        </div>
+
+        <!-- Auteurs préférés -->
+        <div class="mb-3">
+          <label for="favorite_authors" class="form-label"
+            >Auteurs préférés (facultatif) :</label
+          >
+          <input
+            type="text"
+            id="favorite_authors"
+            name="favorite_authors"
+            class="form-control"
+          />
+        </div>
+
+        <!-- Bouton Soumettre -->
+        <button type="submit" class="btn btn-primary w-100">Soumettre</button>
+      </form>
+    </div>
+    <!-- Centrer le bouton avec Flexbox -->
+    <div class="d-flex justify-content-center">
+      <a href="{% url 'sparql_query' %}" class="btn btn-secondary mt-3">
+        Exécuter une requête SPARQL
+      </a>
+    </div>
+    <!-- Script Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Validation du formulaire avec Bootstrap
+      (function () {
+        "use strict";
+
+        const forms = document.querySelectorAll(".needs-validation");
+
+        Array.from(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>
