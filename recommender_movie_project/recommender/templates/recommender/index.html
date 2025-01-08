@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cinema World</title>
+    <!-- Lien direct vers le fichier CSS -->
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="/static/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="/static/js/cufon-yui.js" type="text/javascript"></script>
+    <script src="/static/js/cufon-replace.js" type="text/javascript"></script>
+    <script src="/static/js/Gill_Sans_400.font.js" type="text/javascript"></script>
+    <script src="/static/js/script.js" type="text/javascript"></script>
+</head>
+<body id="page1">
+    <div class="tail-top">
+        <div class="tail-bottom">
+            <div id="main">
+                <div id="header">
+                    <div class="row-1">
+                        <div class="fleft"><a href="#">Cinema <span>World</span></a></div>
+                        <ul>
+                            <li><a href="#"><img src="/static/images/icon1-act.gif" alt="" /></a></li>
+                            <li><a href="#"><img src="/static/images/icon2.gif" alt="" /></a></li>
+                            <li><a href="#"><img src="/static/images/icon3.gif" alt="" /></a></li>
+                        </ul>
+                    </div>
+                    <div class="row-2">
+                        <ul>
+                            <li><a href="{% url 'index' %}"class="active">Home</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'sparql_query' %}">Requêtes SPARQL</a></li>
+                            <li><a href="{% url 'profile' %}">Préférences</a></li>
+                            <li class="last"><a href="sitemap.html">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="content">
+                    <div id="slogan">
+                        <div class="image png"></div>
+                        <div class="inside">
+                            <h2>Découvrez vos films préférés <span>selon vos préférences</span></h2>
+                            <p>Recevez des recommandations de films basées sur vos goûts et explorez une vaste base de données de films en utilisant SPARQL.</p>
+                            <div class="wrapper"><a href="{% url 'profile' %}" class="link1"><span><span>En savoir plus sur nos recommandations</span></span></a></div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="border-right">
+                            <div class="border-left">
+                                <div class="inner">
+                                    <h3>Bienvenue dans <b>Cinema</b> <span>World</span></h3>
+                                    <p>Notre site vous aide à découvrir des films correspondant à vos préférences grâce à des recommandations intelligentes. Vous pouvez également exécuter des requêtes SPARQL pour obtenir des informations sur les films disponibles dans BDPedia ou une ontologie cinématographique.</p>
+                                    <div class="img-box1"><img src="/static/images/1page-img1.jpg" alt="" />Fauctororci cursuspendrerisque ipsum elit congue nibh proin nulla eu urna et. Tordolorem metus fringilla sem facinia sapien in in malesuada vitae quismodo. Ipsumut tellentegest nunc pede id sem gravida natis justo maecenas eu. </div>
+                                    <p>Doneccursus et amet a mattitor condisse laoreet accum wisis sapibulum orci. Cursuscondimentum dolorem pulvinare lacus amet commod tincidunt tellus quisque donec natibus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>Films <span>Récents</span></h3>
+                        <ul class="movies">
+                            <li>
+                                <h4>Toy Story 3</h4>
+                                <img src="/static/images/1page-img2.jpg" alt="Toy Story 3" />
+                                <p>Une aventure animée incontournable pour toute la famille, avec des personnages attachants et une histoire émouvante. Découvrez ce film et bien plus encore grâce à nos recommandations basées sur vos préférences !</p>
+                                <div class="wrapper"><a href="#" class="link2"><span><span>Lire Plus</span></span></a></div>
+                            </li>
+                            <li>
+                                <h4>Prince of Percia: Sands of Time</h4>
+                                <img src="/static/images/1page-img3.jpg" alt="Prince of Persia" />
+                                <p>Dolorem malesuada anterdum quis vitae. Cursustellentesque enim justo vestasse vitae trices phasellus leo sociis leo magnisl. Malestibulusnatis.</p>
+                                <div class="wrapper"><a href="#" class="link2"><span><span>Lire Plus</span></span></a></div>
+                            </li>
+                            <li class="last">
+                                <h4>The Twilight Saga: Eclipse</h4>
+                                <img src="/static/images/1page-img4.jpg" alt="The Twilight Saga" />
+                                <p>Quisque felit odio ut nunc convallis semper sente ris feugiat. Odionam leo phasellentum id vitantesque nunc tor quisque a maecenatibus pellus.</p>
+                                <div class="wrapper"><a href="#" class="link2"><span><span>Lire Plus</span></span></a></div>
+                            </li>
+                            <li class="clear">&nbsp;</li>
+                        </ul>
+                    </div>
+{#                    <div id="sparql-query-section">#}
+{#                        <h3>Exécutez une requête SPARQL pour explorer les films</h3>#}
+{#                        <p>Utilisez l'outil ci-dessous pour récupérer des informations détaillées sur les films depuis notre base de données :</p>#}
+{#                        <textarea id="sparql-query" placeholder="Entrez votre requête SPARQL ici..."></textarea>#}
+{#                        <button onclick="executeSparql()">Exécuter la requête</button>#}
+{#                    </div>#}
+                </div>
+                <div id="footer">
+                    <div class="left">
+                        <div class="right">
+                            <div class="footerlink">
+                                <p class="lf">Copyright &copy; 2010 <a href="#">SiteName</a> - All Rights Reserved</p>
+                                <p class="rf">Design by <a href="http://www.templatemonster.com/">TemplateMonster</a></p>
+                                <div style="clear:both;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>

@@ -1,11 +1,105 @@
-<h1>Recommandations pour {{ username }}</h1>
-{% if films %}
-<ul>
-  {% for film in films %}
-  <li>{{ film }}</li>
-  {% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cinema World - Recommandations</title>
+    <!-- Lien direct vers le fichier CSS -->
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="/static/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="/static/js/cufon-yui.js" type="text/javascript"></script>
+    <script src="/static/js/cufon-replace.js" type="text/javascript"></script>
+    <script src="/static/js/Gill_Sans_400.font.js" type="text/javascript"></script>
+    <script src="/static/js/script.js" type="text/javascript"></script>
+</head>
+<body id="page1">
+    <div class="tail-top">
+        <div class="tail-bottom">
+            <div id="main">
+                <div id="header">
+                    <div class="row-1">
+                        <div class="fleft"><a href="#">Cinema <span>World</span></a></div>
+                        <ul>
+                            <li><a href="#"><img src="/static/images/icon1-act.gif" alt="" /></a></li>
+                            <li><a href="#"><img src="/static/images/icon2.gif" alt="" /></a></li>
+                            <li><a href="#"><img src="/static/images/icon3.gif" alt="" /></a></li>
+                        </ul>
+                    </div>
+                    <div class="row-2">
+                       <ul>
+                            <li><a href="{% url 'index' %}"class="active">Home</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'sparql_query' %}">Requêtes SPARQL</a></li>
+                            <li><a href="{% url 'profile' %}">Préférences</a></li>
+                            <li class="last"><a href="sitemap.html">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="content">
+                    <div id="slogan">
+                        <div class="image png"></div>
+                        <div class="inside">
+                            <h2>Découvrez vos films préférés <span>selon vos préférences</span></h2>
+                            <p>Recevez des recommandations de films basées sur vos goûts et explorez une vaste base de données de films en utilisant SPARQL.</p>
+                            <div class="wrapper"><a href="{% url 'profile' %}" class="link1"><span><span>En savoir plus sur nos recommandations</span></span></a></div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="border-right">
+                            <div class="border-left">
+                                <div class="inner">
+                                    <h3>Recommandations pour <b>{{ username }}</b></h3>
+                                    <p>Voici des films recommandés selon votre genre favori : {{ favorite_genre }}</p>
+                                    <div class="img-box1">
+                                        <ul class="movies">
+    {% if films %}
+        {% for film in films %}
+            <li>
+                <h4>{{ film.title }}</h4>
+                                                        <img src="/static/images/1page-img2.jpg" alt="{{ film }}" />
+                <p>{{ film.abstract }}</p>  <!-- Affichage de la description limitée à 3 phrases -->
+                <div class="wrapper">
+                    <a href="#" class="link2" onclick="showFullDescription('{{ film.full_abstract|escapejs }}', this)">
+                        <span><span>Lire Plus</span></span>
+                    </a>
+                </div>
+                <p class="full-description" style="display:none;"></p> <!-- Zone pour afficher la description complète -->
+            </li>
+        {% endfor %}
+    {% else %}
+        <li>Aucune recommandation trouvée pour le genre sélectionné.</li>
+    {% endif %}
 </ul>
-{% else %}
-<p>Aucune recommandation trouvée pour le genre sélectionné.</p>
-{% endif %}
-<a href="{% url 'profile' %}">Revenir</a>
+                                    </div>
+                                    <div class="wrapper"><a href="{% url 'profile' %}" class="link2"><span><span>Revenir à votre profil</span></span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="footer">
+                        <div class="left">
+                            <div class="right">
+                                <div class="footerlink">
+                                    <p class="lf">Copyright &copy; 2010 <a href="#">SiteName</a> - All Rights Reserved</p>
+                                    <p class="rf">Design by <a href="http://www.templatemonster.com/">TemplateMonster</a></p>
+                                    <div style="clear:both;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript"> Cufon.now(); </script>
+</body>
+
+<script type="text/javascript">
+    function showFullDescription(fullDescription, link) {
+        const parent = link.closest('li');
+        const fullDescriptionElement = parent.querySelector('.full-description');
+        fullDescriptionElement.innerHTML = fullDescription; // Afficher la description complète
+        fullDescriptionElement.style.display = 'block'; // Afficher la description complète
+        link.style.display = 'none'; // Cacher le lien "Lire Plus"
+    }
+</script>
+</html>

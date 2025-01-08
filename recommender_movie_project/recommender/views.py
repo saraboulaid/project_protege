@@ -41,33 +41,51 @@ def profile(request):
     return render(request, "recommender/profile.html")
 
 
+def truncate_description(description, max_sentences=3):
+    sentences = description.split('.')
+    truncated = '. '.join(sentences[:max_sentences]) + ('.' if len(sentences[:max_sentences]) > 0 else '')
+    return truncated
+
 
 def recommend_based_on_genre(user_genre):
     sparql = SPARQLWrapper("http://dbpedia.org/sparql")
     query = f"""
-    SELECT ?film ?title WHERE {{
+    SELECT ?film ?title ?image ?abstract WHERE {{
         ?film rdf:type dbo:Film.
         ?film rdfs:label ?title.
         ?film dbo:genre dbr:{user_genre}.
-        FILTER(LANG(?title) = "en")
+        ?film dbo:thumbnail ?image.
+        ?film dbo:abstract ?abstract.
+        FILTER(LANG(?title) = "en" && LANG(?abstract) = "en")
     }}
     LIMIT 5
     """
-    logger.info(f"SPARQL Query: {query}")  # Log de la requête
-    try:
-        sparql.setQuery(query)
-        sparql.setReturnFormat(JSON)
-        results = sparql.query().convert()
-    except Exception as e:
-        logger.error(f"Erreur SPARQL : {e}")
-        return []
+    sparql.setQuery(query)
+    sparql.setReturnFormat(JSON)
+    results = sparql.query().convert()
 
     films = []
     for result in results.get("results", {}).get("bindings", []):
-        logger.info(f"Film trouvé : {result['title']['value']}")
-        films.append(result["title"]["value"])
+        title = result["title"]["value"]
+        image_url = result.get("image", {}).get("value")
+        abstract = result.get("abstract", {}).get("value")
+
+        if image_url:
+            # Convertir l'URL pour l'affichage
+            image_url = image_url.replace("http://commons.wikimedia.org/wiki/Special:FilePath/",
+                                          "https://upload.wikimedia.org/wikipedia/commons/")
+
+        truncated_abstract = truncate_description(abstract)  # Limiter la description à 3 phrases
+
+        films.append({
+            "title": title,
+            "image": image_url,
+            "abstract": truncated_abstract,
+            "full_abstract": abstract  # Conserver l'abstract complet pour affichage ultérieur
+        })
 
     return films
+
 
 def sparql_query(request):
     if request.method == "POST":
@@ -89,3 +107,11 @@ def sparql_query(request):
             return render(request, "recommender/sparql_query.html", {"error": f"Erreur lors de l'exécution de la requête : {e}"})
 
     return render(request, "recommender/sparql_query.html")
+
+def home(request):
+    # Ici, vous pouvez ajouter des données dynamiques si nécessaire
+    return render(request, "recommender/index.html")
+
+def about(request):
+    # Ici, vous pouvez ajouter des données dynamiques si nécessaire
+    return render(request, "recommender/about.html")

@@ -21,7 +21,9 @@ from recommender import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Route pour l'admin Django
-    path('recommender/', include('recommender.urls')),  # Inclure les URLs de l'application recommender
+    #path('recommender/', include('recommender.urls')),
+    path('', include('recommender.urls')),
+    # Inclure les URLs de l'application recommender
    
 ]
 

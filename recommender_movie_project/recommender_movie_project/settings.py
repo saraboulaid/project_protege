@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-      'recommender',
+    'recommender',
+
 ]
 
 MIDDLEWARE = [
@@ -74,13 +75,9 @@ WSGI_APPLICATION = "recommender_movie_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',  # Utiliser le backend MySQL
-        'NAME': 'recommender',  # Nom de la base de données
-        'USER': 'root',  # Utilisateur MySQL (root dans ce cas)
-        'PASSWORD': '',  # Pas de mot de passe
-        'HOST': 'localhost',  # Hôte de la base de données (localhost si MySQL est local)
-        'PORT': '3306',  # Port par défaut de MySQL
+     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -116,11 +113,18 @@ USE_I18N = True
 
 USE_TZ = True
 
+STATIC_URL = '/static/'
+
+# Cette ligne est nécessaire pour indiquer où se trouvent vos fichiers statiques locaux :
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Assurez-vous que 'static' est bien à la racine de votre projet
+]
+# Pour les fichiers statiques en mode production
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = "static/"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
