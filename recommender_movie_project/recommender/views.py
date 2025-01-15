@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from SPARQLWrapper import SPARQLWrapper, JSON
 from .models import UserProfile
+import matplotlib.pyplot as plt
+import json
+import io
+import graphviz
+import base64
 import logging
 from rdflib import Graph
 # Charger le graphe RDF au démarrage
@@ -115,3 +120,42 @@ def home(request):
 def about(request):
     # Ici, vous pouvez ajouter des données dynamiques si nécessaire
     return render(request, "recommender/about.html")
+
+
+def visualize_rdf_graph(request):
+    try:
+        current_dir = os.path.dirname(os.path.abspath(__file__))  # Corrected to use __file__
+        rdf_file_path = os.path.join(current_dir, 'project_final_amechenoue.rdf')
+        graph = Graph()
+        graph.parse(rdf_file_path, format="xml")
+
+        # Dictionnaire des prédicats spécifiques à remplacer
+        predicate_mapping = {
+            "untitled-ontology-8#awards": "Awards",
+            "untitled-ontology-8#duree": "Duration",
+        }
+
+        # Préparer une liste pour les nœuds et les arêtes
+        nodes = []
+        edges = []
+
+        for subj, pred, obj in graph:
+            pred_str = str(pred)
+            label = predicate_mapping.get(pred_str, pred_str.split('/')[-1])
+
+            # Ajouter les nœuds et les arêtes
+            nodes.append({"id": str(subj)})
+            nodes.append({"id": str(obj)})
+            edges.append({"source": str(subj), "target": str(obj), "label": label})
+
+        # Supprimer les doublons dans les nœuds
+        unique_nodes = list({node["id"]: node for node in nodes}.values())
+
+        # Construire le graphdata en JSON
+        graphdata = {"nodes": unique_nodes, "edges": edges}
+
+        # Passer les données au template
+        return render(request, "recommender/rdf_graph.html", {"graph_data": json.dumps(graphdata)})
+
+    except Exception as e:
+        return render(request, "recommender/rdf_graph.html", {"error": f"Erreur : {e}"})

@@ -6,5 +6,6 @@ urlpatterns = [
     path('about', views.about, name='about'),
     path('profile/', views.profile, name='profile'),
     path('sparql/', views.sparql_query, name='sparql_query'),
+    path('visualization/', views.visualize_rdf_graph, name='rdf_graph'),
 
 ]

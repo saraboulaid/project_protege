@@ -23,7 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),  # Route pour l'admin Django
     #path('recommender/', include('recommender.urls')),
     path('', include('recommender.urls')),
-    # Inclure les URLs de l'application recommender
-    path("nlp/", include("nlp_app.urls"))
+    
 ]
 
