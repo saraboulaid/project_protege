@@ -62,12 +62,12 @@
                         </ul>
                     </div>
                     <div class="row-2">
-                       <ul>
-                            <li><a href="{% url 'index' %}"class="active">Home</a></li>
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
                             <li><a href="{% url 'about' %}">About</a></li>
-                            <li><a href="{% url 'sparql_query' %}">Requêtes SPARQL</a></li>
-                            <li><a href="{% url 'profile' %}">Préférences</a></li>
-                            <li class="last"><a href="sitemap.html">Sitemap</a></li>
+                            <li><a href="{% url 'sparql_query' %}" >Requêtes SPARQL</a></li>
+                            <li><a href="{% url 'profile' %}" class="active">Préférences</a></li>
+{#                            <li class="last"><a href="{% url 'analyze_text' %}" >NLP</a></li>#}
                         </ul>
                     </div>
                 </div>
@@ -109,9 +109,9 @@
           >
             <option value="">-- Sélectionnez un genre --</option>
             <option value="Comedy">Comedy</option>
-            <option value="Action">Action</option>
+            <option value="Fantasy">Fantasy</option>
             <option value="Drama">Drama</option>
-            <option value="Horror">Horror</option>
+            <option value="Mystery_fiction">Mystery_fiction</option>
             <!-- Ajouter d'autres genres si nécessaire -->
           </select>
           <div class="invalid-feedback">
@@ -139,11 +139,11 @@
       </form>
     </div>
     <!-- Centrer le bouton avec Flexbox -->
-    <div class="d-flex justify-content-center">
-      <a href="{% url 'sparql_query' %}" class="btn btn-secondary mt-3">
-        Exécuter une requête SPARQL
-      </a>
-    </div>
+{#    <div class="d-flex justify-content-center">#}
+{#      <a href="{% url 'sparql_query' %}" class="btn btn-secondary mt-3">#}
+{#        Exécuter une requête SPARQL#}
+{#      </a>#}
+{#    </div>#}
     <!-- Script Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>

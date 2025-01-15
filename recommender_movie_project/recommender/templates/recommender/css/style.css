@@ -167,7 +167,7 @@ ul, ol {
 	text-decoration:none;
 }
 .list li a:hover {
-	color:#d72a18;
+	color: #e879f9;
 }
 .sitemap-list {
 	padding-bottom:25px;
@@ -178,7 +178,7 @@ ul, ol {
 	background:url(../images/arrow.gif) no-repeat left 8px;
 }
 .sitemap-list li a {
-	color:#d72a18;
+	color: #e879f9;
 }
 .img-box1 {
 	width:100%;
@@ -251,7 +251,7 @@ h3 b {
 	font-weight:normal;
 }
 h3 span {
-	color:#d72a18;
+	color:#e879f9;
 }
 h4 {
 	font-size:20px;
@@ -381,7 +381,7 @@ h4 {
 	text-align:center;
 }
 #header .row-2 ul li a:hover, #header .row-2 ul li a.active {
-	color:#d72a18;
+	color:#e879f9;
 	background-image:url(../images/nav-act.gif);
 }
 #content .content {
@@ -390,8 +390,8 @@ h4 {
 .inner_copy, .inner_copy a {
 	border:0;
 	float:right;
-	background:#f00;
-	color:#f00;
+	background:#e879f9;
+	color:#e879f9;
 	width:50%;
 	line-height:10px;
 	font-size:10px;

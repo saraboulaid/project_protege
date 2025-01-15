@@ -24,6 +24,6 @@ urlpatterns = [
     #path('recommender/', include('recommender.urls')),
     path('', include('recommender.urls')),
     # Inclure les URLs de l'application recommender
-   
+    path("nlp/", include("nlp_app.urls"))
 ]
 
